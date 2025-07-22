@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.pricing {
+  width: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  padding: 20px;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 18px;
+  color: green;
+  margin-bottom: 12px;
+}
+
+.features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+
+.features li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.btn {
+  background: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: darkblue;
+}
+</style>
+</head>
+<body>
+
+<div id="cards"></div>
+
+<script>
+function Card(title, price, features) {
+  const featureItems = features.map(f => `<li>${f}</li>`).join('');
+  return `
+    <div class="pricing">
+      <h2 class="title">${title}</h2>
+      <p class="price">${price}</p>
+      <ul class="features">
+        ${featureItems}
+      </ul>
+      <button class="btn">Start Trial</button>
+    </div>
+  `;
+}
+
+// Example usage:
+document.getElementById('cards').innerHTML = Card(
+  "Basic Plan",
+  "$9.99 /month",
+  ["1 GB Storage", "Basic Support", "All Core Features"]
+);
+
+// To add more cards, call Card(...) and append to innerHTML.
+</script>
+
+</body>
+</html>

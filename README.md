@@ -1,0 +1,1 @@
+Fix layout and rendering bugs in this pricing card snippet. Also refactor it into a reusable HTML component-like structure using a JavaScript function such as Card(title, price, features).
